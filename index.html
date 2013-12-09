@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mandelbrot by nazomikan</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Mandelbrot</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/nazomikan/mandelbrot">View the Project on GitHub <small>nazomikan/mandelbrot</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/nazomikan/mandelbrot/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/nazomikan/mandelbrot/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/nazomikan/mandelbrot">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="mandelbrot%E3%81%AE%E6%8F%8F%E7%94%BB" class="anchor" href="#mandelbrot%E3%81%AE%E6%8F%8F%E7%94%BB"><span class="octicon octicon-link"></span></a>Mandelbrotの描画</h1>
+
+<p>カオスの大描画です。
+普通に描画するとスレッドかたまるのでいろいろな方法で描画するコードの紹介</p>
+
+<h2>
+<a name="001-ui-blocking" class="anchor" href="#001-ui-blocking"><span class="octicon octicon-link"></span></a>001 UI-Blocking</h2>
+
+<p>普通に描画してます。　普通のブラウザなら固まりますので見る時は落ちてもいいようにブラウザのウィンドウをわけて見るといいと思います。</p>
+
+<h2>
+<a name="002-lazy-draw" class="anchor" href="#002-lazy-draw"><span class="octicon octicon-link"></span></a>002 Lazy Draw</h2>
+
+<p>非同期に描画します。　でも940px*940pxなので単純にasyncにしただけのこの描画ではブラウザこそ固まらないものの、描画完了するまでにすごく時間がかかります。</p>
+
+<h2>
+<a name="003-split-block--lazy-draw" class="anchor" href="#003-split-block--lazy-draw"><span class="octicon octicon-link"></span></a>003 Split Block &amp; Lazy Draw</h2>
+
+<p>描画範囲をブロック単位(100px * 100px)に細かく区切って、それらをasyncに描画します。　ぽこぽこ描画されていくのでほどよい感じに思えると思います。</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/nazomikan">nazomikan</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
